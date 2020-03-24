@@ -1,4 +1,4 @@
-from doubly_linked_list import *
+from doubly_linked_list import DoublyLinkedList
 
 class Queue:
     def __init__(self):
