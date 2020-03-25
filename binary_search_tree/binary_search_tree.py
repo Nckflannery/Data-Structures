@@ -1,7 +1,5 @@
-import sys
-sys.path.append('../queue_and_stack')
-from dll_queue import Queue
-from dll_stack import Stack
+from queue_and_stack.dll_queue import Queue
+from queue_and_stack.dll_stack import Stack
 
 
 class BinarySearchTree:
