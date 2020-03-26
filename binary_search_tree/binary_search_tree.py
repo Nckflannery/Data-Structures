@@ -71,20 +71,49 @@ class BinarySearchTree:
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
-        pass
+        # Breadth first so we want FIFO/LILO(queue)
+        # Create queue
+        que = Queue()
+        current = node
+        while current:
+            print(current.value)
+            if current.left:
+                que.enqueue(current.left)
+            if current.right:
+                que.enqueue(current.right)
+            current = que.dequeue()
+
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
-        pass
+        # Depth first so we want FILO/LIFO(stack)
+        # Create stack
+        st = Stack()
+        current = node
+        while current:
+            print(current.value)
+            if current.right:
+                st.push(current.right)
+            if current.left:
+                st.push(current.left)
+            current = st.pop()
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
     def pre_order_dft(self, node):
-        pass
+        print(self.value)
+        if self.left:
+            self.left.pre_order_dft(node)
+        if self.right:
+            self.right.pre_order_dft(node)
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
-        pass
+        if self.left:
+            self.left.post_order_dft(node)
+        if self.right:
+            self.right.post_order_dft(node)
+        print(self.value)
