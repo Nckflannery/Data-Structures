@@ -28,7 +28,7 @@ class BinarySearchTree:
     def contains(self, target):
         if target is self.value:
             return True
-        elif target >= self.value:
+        elif target > self.value:
             if self.right:
                 return self.right.contains(target)
             else:
